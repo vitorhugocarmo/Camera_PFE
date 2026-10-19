@@ -1,10 +1,6 @@
 
 # Camera PFE — Capturador de Imagens
 
-## Integrantes
-- Victor Hugo
-- [Nome do segundo integrante]
-
 ## Descrição
 O Camera PFE é uma aplicação web desenvolvida para a atividade
 intermediária de Programação Front-End. O sistema permite acessar

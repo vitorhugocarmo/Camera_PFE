@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera PFE | Capturador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="logo">CAM<span>ERA</span></div>
+        <p>CAPTURA E IDENTIFICAÇÃO DIGITAL</p>
+    </header>
+
+    <main class="container">
+
+        <section class="apresentacao">
+            <h1>Capturador de <span>Imagens</span></h1>
+            <p>
+                Utilize sua câmera, aplique um filtro visual e gere
+                uma fotografia identificada com seus dados.
+            </p>
+        </section>
+
+        <section class="painel">
+            <div class="cabecalho-painel">
+                <div>
+                    <h2>Estúdio de captura</h2>
+                    <p>Configure os dados antes de fotografar.</p>
+                </div>
+
+                <span id="status" class="status desligada">
+                    ● Câmera desligada
+                </span>
+            </div>
+
+            <div class="campo">
+                <label for="nomeAluno">Nome do aluno</label>
+                <input
+                    type="text"
+                    id="nomeAluno"
+                    placeholder="Digite seu nome completo"
+                    maxlength="60"
+                >
+            </div>
+
+            <div class="campo">
+                <label for="filtro">Filtro visual</label>
+                <select id="filtro">
+                    <option value="none">Original</option>
+                    <option value="grayscale(1)">Preto e branco</option>
+                    <option value="sepia(1)">Sépia</option>
+                    <option value="invert(1)">Invertido</option>
+                </select>
+            </div>
+
+            <div class="area-camera">
+                <video
+                    id="video"
+                    autoplay
+                    playsinline
+                    muted
+                    hidden
+                ></video>
+
+                <div id="avisoCamera" class="aviso-camera">
+                    <div class="icone-camera">◎</div>
+                    <h3>Sua câmera está desligada</h3>
+                    <p>Ligue a câmera para começar a captura.</p>
+                </div>
+            </div>
+
+            <div class="botoes">
+                <button id="ligarCamera" class="btn btn-principal">
+                    Ligar câmera
+                </button>
+
+                <button id="capturar" class="btn btn-captura" disabled>
+                    Capturar foto
+                </button>
+
+                <button id="desligarCamera" class="btn btn-secundario" disabled>
+                    Desligar câmera
+                </button>
+            </div>
+
+            <p id="mensagem" class="mensagem" aria-live="polite">
+                Aguardando início da câmera.
+            </p>
+        </section>
+
+        <section class="resultado">
+            <div class="titulo-resultado">
+                <div>
+                    <h2>Fotografia processada</h2>
+                    <p>Sua imagem com filtro, identificação e horário.</p>
+                </div>
+
+                <span class="tag-resultado">RESULTADO</span>
+            </div>
+
+            <div class="area-resultado">
+                <canvas id="canvas"></canvas>
+
+                <div id="avisoResultado" class="aviso-resultado">
+                    <span>▧</span>
+                    <p>Sua fotografia aparecerá aqui após a captura.</p>
+                </div>
+            </div>
+
+            <a
+                id="baixarFoto"
+                class="btn btn-download"
+                download="foto-identificada.png"
+                hidden
+            >
+                Baixar fotografia
+            </a>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
